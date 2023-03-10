@@ -5,5 +5,3 @@ class Reading(models.Model):
     current = models.FloatField()
     power = models.FloatField()
     created_at = models.DateTimeField(auto_now_add=True)
- def __str__(self):
-        return f"Voltage: {self.voltage}V, Current: {self.current}A, Power: {self.power}W, Timestamp: {self.created_at}"
