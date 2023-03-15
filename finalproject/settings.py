@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-+-q6h3x&zfr-e=net85qdtwc1iyb43k@s7ri0y578e$jderh1-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', 'dayofinalproject.herokuapp.com']
 
 
 # Application definition
@@ -79,8 +79,12 @@ WSGI_APPLICATION = 'finalproject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'debs8lnvl4dnfk',
+        'HOST':'ec2-3-232-218-211.compute-1.amazonaws.com',
+        'PORT':'5432',
+        'USER':'nfbrcyifkbswrw',
+        'PASSWORD':'41a9c4650ea9b684cdb390112590872a9e9d95bd6424087fa7b5954981a3538d',
     }
 }
 
