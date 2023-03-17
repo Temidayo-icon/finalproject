@@ -10,7 +10,7 @@ def create_reading(request):
     if request.method == 'GET':
         create_reading = Reading.objects.all()
         serializer = ReadingSerializer(readings, many=True)
-        return Response(serializer.data)
+        return Response(serializer.data, status=200)
     elif request.method == 'POST':
     serializer = ReadingSerializer(data=request.data)
     if serializer.is_valid():
