@@ -5,8 +5,13 @@ from rest_framework.response import Response
 from .models import Reading
 from .serializers import ReadingSerializer
 
-@api_view(['POST'])
+@api_view(['GET', 'POST'])
 def create_reading(request):
+    if request.method == 'GET':
+        create_reading = Reading.objects.all()
+        serializer = ReadingSerializer(readings, many=True)
+        return Response(serializer.data)
+    elif request.method == 'POST':
     serializer = ReadingSerializer(data=request.data)
     if serializer.is_valid():
         serializer.save()
