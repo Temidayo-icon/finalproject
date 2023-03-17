@@ -8,7 +8,7 @@ from .serializers import ReadingSerializer
 @api_view(['GET', 'POST'])
 def create_reading(request):
     if request.method == 'GET':
-        create_reading = Reading.objects.all()
+        readings = Reading.objects.all()
         serializer = ReadingSerializer(readings, many=True)
         return Response(serializer.data, status=200)
     elif request.method == 'POST':
