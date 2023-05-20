@@ -4,4 +4,4 @@ from .models import Reading
 class ReadingSerializer(serializers.ModelSerializer):
     class Meta:
         model = Reading
-        fields = ('id', 'voltage', 'current', 'power', 'created_at')
+        fields = ('id', 'voltage', 'current', 'power', 'timestamp')
